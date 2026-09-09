@@ -1,0 +1,16 @@
+{
+  "name": "Ionic core (Stencil)",
+  "install": "bash -c 'set -eo pipefail; export NVM_DIR=\"$HOME/.nvm\"; . \"$NVM_DIR/nvm.sh\"; nvm install 8.17.0 >/dev/null; export PATH=\"$HOME/.nvm/versions/node/v8.17.0/bin:$PATH\"; echo \"using node $(node -v) / npm $(npm -v)\"; npm install --no-audit --no-fund --loglevel=error; npm --prefix core install --no-audit --no-fund --loglevel=error; rm -rf core/node_modules/@types/*; echo install-complete'",
+  "terminals": [
+    {
+      "name": "core-dev-server",
+      "command": "export PATH=\"$HOME/.nvm/versions/node/v8.17.0/bin:$PATH\"; cd core && npm run dev"
+    }
+  ],
+  "ports": [
+    {
+      "name": "core-dev-server",
+      "port": 3333
+    }
+  ]
+}
